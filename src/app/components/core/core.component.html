@@ -1,0 +1,9 @@
+<app-spinner></app-spinner>
+<div class="app-admin-wrap layout-sidebar-large">
+  <div class="side-content-wrap">
+      <app-sidebar></app-sidebar>
+  </div>
+  <div class="main-content-wrap d-flex flex-column"  [ngClass]="{'sidenav-open': navService.sidebarState.sidenavOpen}" [perfectScrollbar]="{suppressScrollX: true}" style="background-color: #fafafa">
+      <router-outlet></router-outlet>
+  </div>
+</div>

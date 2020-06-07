@@ -1,0 +1,26 @@
+<div class="breadcrumb">
+    <h1>الأنظمة</h1>
+</div>
+<div class="separator-breadcrumb border-top"></div>
+
+<div *ngFor="let module of modules" class="list-item col-md-12">
+    <div class="card o-hidden mb-4 d-flex flex-row  p-3">
+      <div class="list-thumb d-flex" style="justify-content: center;flex-direction: column;">
+        <!-- TUMBNAIL -->
+        <i style="font-size: 40px;" class="i-{{module?.moduleInfo.moduleIcon}}"></i>
+      </div>
+      <div class="flex-grow-1 pl-2 d-flex">
+        <div class="card-body align-self-center d-flex flex-column justify-content-between align-items-lg-center flex-lg-row">
+          <!-- OTHER DATA -->
+          <a href="{{module?.moduleInfo.moduleLink}}" class="w-40 w-sm-100" style="text-align: right;">
+            <div class="item-title">{{module?.moduleInfo.moduleNameAr}}</div>
+          </a>
+        </div>
+        <div class=" d-flex flex-row align-self-center pl-3 pb-2 pr-3 item-select">
+          <a (click)="updateModule(module?.moduleId)" class="d-flex" style="justify-content: center;flex-direction: column;">
+            <i class="i-Edit"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>

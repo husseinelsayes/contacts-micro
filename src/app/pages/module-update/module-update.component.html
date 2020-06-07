@@ -1,0 +1,52 @@
+<div class="breadcrumb">
+    <h1>تحديث بيانات النظام</h1>
+</div>
+<div class="separator-breadcrumb border-top"></div>
+
+<div class="row text-right">
+    <div class="col-md-12">
+        <div class="card mb-4">
+            <div class="card-body">
+                <form [formGroup]="moduleInfo" (ngSubmit)="submit()">
+                    <div class="row">
+                        <div class="col-md-12 form-group mb-3">
+                            <label>اسم النظام بالعربية</label>
+                            <input type="text" class="form-control" formControlName="moduleNameAr" placeholder="">
+                        </div>
+
+                        <div class="col-md-12 form-group mb-3">
+                            <label>اسم النظام بالانجليزية</label>
+                            <input type="text" class="form-control" formControlName="moduleNameEn" placeholder="">
+                        </div>
+
+                        <div class="col-md-12 form-group mb-3">
+                            <label>رابط النظام</label>
+                            <input type="text" class="form-control" formControlName="moduleLink" placeholder="">
+                        </div>
+
+                        <div class="col-md-12 form-group mb-3">
+                            <label>ايقونة النظام</label>
+                            <span *ngIf="this.moduleInfo.get('moduleIcon').value == null " class="form-control" (click)="openModal()" >اختر</span>
+                            <i style="font-size: 60px;display: block;" class="i-{{this.moduleInfo.get('moduleIcon')?.value}}" (click)="openModal()"></i>
+                        </div>
+
+                        <div class="col-md-12">
+                            <button type="submit" [disabled]="!this.moduleInfo.valid" class="btn btn-primary btn-rounded">تحديث</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</div>
