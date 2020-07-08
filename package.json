@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:micro": "ng build --prod --output-hashing none --single-bundle true --bundleStyles false --keepStyles false --output-path dist/permission-app"
+    "build:micro": "ng build --prod --output-hashing none --single-bundle true --bundleStyles false --keepStyles false --output-path dist/contacts-app"
   },
   "private": true,
   "dependencies": {

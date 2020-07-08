@@ -18,6 +18,15 @@ export class AuthenticationService {
     return this._http.get(resourceUrl, {headers});
   }
 
+  //STRING
+  getResourceString(resourceUrl, reType): Observable<any> {
+    const headers = new HttpHeaders({
+        Authorization: 'Bearer ' + this._oauthService.getAccessToken()
+    });
+
+    return this._http.get(resourceUrl, {headers, responseType: reType});
+}
+
   //POST
   postResource(resourceUrl, obj: any): Observable<any> {
     const headers = new HttpHeaders({

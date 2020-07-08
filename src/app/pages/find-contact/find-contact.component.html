@@ -1,0 +1,39 @@
+<div class="breadcrumb">
+    <h1>البحث في دليل الهاتف</h1>
+</div>
+<div class="separator-breadcrumb border-top"></div>
+
+<div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <input id="name_en" placeholder="الاسم بالعربية" [formControl]="searchControl" class="form-control form-control-rounded" type="text">
+      </div>
+    </div>
+</div>
+
+<div class="row text-right">
+    <div *ngFor="let person of filteredPersons" class="col-md-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 mt-3">
+                    <div class="card">
+                        <div class="card-horizontal">
+                            <div class="img-square-wrapper">
+                                <!-- <img class="" width="130px" height="160px" src="http://via.placeholder.com/300x180" alt="Card image cap"> -->
+                                <img *ngIf="person.image"  class="" width="130px" height="160px" [src]="person.image" alt="Card image cap">
+                                <img *ngIf="!person.image" class="" width="130px" height="160px" src="../../../assets/images/faces/avatar.png" alt="Card image cap">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title">{{person.name_ar}}</h4>
+                                <p class="card-text">{{person.name_en}}</p>
+                                <p class="card-text">{{person.jobTitle}}</p>
+                                <p class="card-text">{{person.email}}</p>
+                                <p class="card-text">{{person.ipPhone}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
